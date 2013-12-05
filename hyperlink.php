@@ -2,22 +2,21 @@
 
 class cfs_hyperlink extends cfs_field
 {
-    function __construct($parent)
-    {
+
+    function __construct( $parent ) {
         $this->name = 'hyperlink';
-        $this->label = __('Hyperlink', 'cfs');
+        $this->label = __( 'Hyperlink', 'cfs' );
         $this->parent = $parent;
     }
 
-    function html($field)
-    {
-        if (empty($field->value))
-        {
+
+    function html( $field ) {
+        if ( empty( $field->value ) ) {
             $field->value = array(
-                'url' => 'http://',
-                'text' => '',
-                'class' => '',
-                'target' => '',
+                'url'       => 'http://',
+                'text'      => '',
+                'class'     => '',
+                'target'    => '',
             );
         }
     ?>
@@ -28,22 +27,21 @@ class cfs_hyperlink extends cfs_field
     <?php
     }
 
-    function pre_save($value, $field)
-    {
-        return serialize($value);
+
+    function pre_save( $value, $field ) {
+        return serialize( $value );
     }
 
-    function prepare_value($value, $field)
-    {
-        return unserialize($value[0]);
+
+    function prepare_value( $value, $field ) {
+        return unserialize( $value[0] );
     }
 
-    function format_value_for_api($value, $field)
-    {
+
+    function format_value_for_api( $value, $field ) {
         $output = '';
 
-        if (!empty($value['url']))
-        {
+        if ( ! empty( $value['url'] ) ) {
             $output = '<a href="' . $value['url'] . '">' . $value['text'] . '</a>';
         }
 

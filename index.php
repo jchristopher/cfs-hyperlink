@@ -9,18 +9,17 @@ Author URI: http://uproot.us/
 License: GPL2
 */
 
-$cfs_hyperlink_addon = new cfs_divider_addon();
+$cfs_hyperlink_addon = new cfs_hyperlink_addon();
 
-class cfs_divider_addon
+class cfs_hyperlink_addon
 {
-    function __construct()
-    {
-        add_filter('cfs_field_types', array($this, 'cfs_field_types'));
+    function __construct() {
+        add_filter( 'cfs_field_types', array( $this, 'cfs_field_types' ) );
     }
 
-    function cfs_field_types($field_types)
+    function cfs_field_types( $field_types )
     {
-        $field_types['hyperlink'] = dirname(__FILE__) . '/hyperlink.php';
+        $field_types['hyperlink'] = dirname( __FILE__ ) . '/hyperlink.php';
         return $field_types;
     }
 }
