@@ -3,7 +3,7 @@
 Plugin Name: CFS - Hyperlink Add-on
 Plugin URI: http://uproot.us/
 Description: The hyperlink field type for Custom Field Suite (add-on).
-Version: 1.0.0
+Version: 1.1.0
 Author: Matt Gibbs
 Author URI: http://uproot.us/
 License: GPL2
