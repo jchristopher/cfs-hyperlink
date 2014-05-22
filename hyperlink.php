@@ -21,9 +21,9 @@ class cfs_hyperlink extends cfs_field
         }
     ?>
         <div>URL</div>
-        <input type="text" name="<?php echo $field->input_name; ?>[url]" class="link-url" value="<?php echo $field->value['url']; ?>" />
+        <input type="text" name="<?php echo esc_attr( $field->input_name ); ?>[url]" class="link-url" value="<?php echo esc_url( $field->value['url'] ); ?>" />
         <div>Link Text</div>
-        <input type="text" name="<?php echo $field->input_name; ?>[text]" class="link-text" value="<?php echo $field->value['text']; ?>" />
+        <input type="text" name="<?php echo esc_attr( $field->input_name ); ?>[text]" class="link-text" value="<?php echo esc_attr( $field->value['text'] ); ?>" />
     <?php
     }
 
@@ -42,7 +42,7 @@ class cfs_hyperlink extends cfs_field
         $output = '';
 
         if ( ! empty( $value['url'] ) ) {
-            $output = '<a href="' . $value['url'] . '">' . $value['text'] . '</a>';
+            $output = '<a href="' . esc_url( $value['url'] ) . '">' . esc_html( $value['text'] ) . '</a>';
         }
 
         return $output;
