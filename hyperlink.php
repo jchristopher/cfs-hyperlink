@@ -20,10 +20,16 @@ class cfs_hyperlink extends cfs_field
             );
         }
     ?>
-        <div>URL</div>
-        <input type="text" name="<?php echo $field->input_name; ?>[url]" class="link-url" value="<?php echo $field->value['url']; ?>" />
-        <div>Link Text</div>
-        <input type="text" name="<?php echo $field->input_name; ?>[text]" class="link-text" value="<?php echo $field->value['text']; ?>" />
+        <div class="cfs-hyperlink" style="overflow:hidden;">
+		    <div class="cfs-hyperlink-url" style="width:49%;float:left;">
+                <div>URL</div>
+                <input type="text" name="<?php echo $field->input_name; ?>[url]" class="link-url" value="<?php echo $field->value['url']; ?>" />
+		    </div>
+		    <div class="cfs-hyperlink-text" style="width:49%;float:right;">
+                <div>Link Text</div>
+                <input type="text" name="<?php echo $field->input_name; ?>[text]" class="link-text" value="<?php echo $field->value['text']; ?>" />
+		    </div>
+	    </div>
     <?php
     }
 
