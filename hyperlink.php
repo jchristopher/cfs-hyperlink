@@ -29,6 +29,13 @@ class cfs_hyperlink extends cfs_field
 
 
     function pre_save( $value, $field ) {
+        // convert to a proper associative array when inside a Loop
+	    if ( isset( $value[0]['url'] ) && isset( $value[1]['text'] ) ) {
+		    $value = array(
+			    'url' => $value[0]['url'],
+			    'text' => $value[1]['text'],
+		    );
+	    }
         return serialize( $value );
     }
 
