@@ -3,10 +3,9 @@
 class cfs_hyperlink extends cfs_field
 {
 
-    function __construct( $parent ) {
+    function __construct() {
         $this->name = 'hyperlink';
         $this->label = __( 'Hyperlink', 'cfs' );
-        $this->parent = $parent;
     }
 
 
