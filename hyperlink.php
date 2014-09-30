@@ -33,7 +33,7 @@ class cfs_hyperlink extends cfs_field
     }
 
 
-    function pre_save( $value, $field ) {
+    function pre_save( $value, $field = null ) {
         // convert to a proper associative array when inside a Loop
 	    if ( isset( $value[0]['url'] ) && isset( $value[1]['text'] ) ) {
 		    $value = array(
@@ -45,12 +45,12 @@ class cfs_hyperlink extends cfs_field
     }
 
 
-    function prepare_value( $value, $field ) {
+    function prepare_value( $value, $field = null ) {
         return unserialize( $value[0] );
     }
 
 
-    function format_value_for_api( $value, $field ) {
+    function format_value_for_api( $value, $field = null ) {
         $output = '';
 
         if ( ! empty( $value['url'] ) ) {
